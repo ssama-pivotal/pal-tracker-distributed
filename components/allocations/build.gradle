@@ -1,7 +1,11 @@
 dependencies {
     compile project(":components:rest-support")
     compile "org.springframework:spring-jdbc:$springVersion"
+<<<<<<< HEAD
     compile "com.netflix.hystrix:hystrix-javanica:1.5.18"
+=======
+    compile "com.netflix.hystrix:hystrix-javanica:$hystrixJavanicaVersion"
+>>>>>>> Enable circuit breaker
 
     testCompile project(":components:test-support")
 }
