@@ -11,14 +11,9 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ProjectClient {
 
     private final Logger logger = LoggerFactory.getLogger(getClass());
-<<<<<<< HEAD
-=======
     private final Map<Long, ProjectInfo> projectsCache = new ConcurrentHashMap<>();
->>>>>>> Enable circuit breaker
     private final RestOperations restOperations;
     private final String endpoint;
-    private final Map<Long, ProjectInfo> projectsCache = new ConcurrentHashMap<>();
-
 
     public ProjectClient(RestOperations restOperations, String registrationServerEndpoint) {
         this.restOperations = restOperations;
@@ -32,11 +27,6 @@ public class ProjectClient {
         projectsCache.put(projectId, project);
 
         return project;
-    }
-
-    public ProjectInfo getProjectFromCache(long projectId) {
-        logger.info("Getting project with id {} from cache", projectId);
-        return projectsCache.get(projectId);
     }
 
     public ProjectInfo getProjectFromCache(long projectId) {
